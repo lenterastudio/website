@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize AOS library for scroll animations
   AOS.init({
-    duration: 1000,
+    duration: 600,
     once: true
   });
 
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (index < fullText.length) {
         heroHeading.textContent += fullText.charAt(index);
         index++;
-        setTimeout(typeWriter, 100);
+        setTimeout(typeWriter, 40);
       }
     }
     typeWriter();
