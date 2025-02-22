@@ -147,6 +147,14 @@ body {
     color: var(--primary-color);
 }
 
+.btn-contact {
+    background: var(--white);
+	font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
 .btn-secondary {
     background: rgba(255, 255, 255, 0.1);
     color: var(--white);
@@ -167,17 +175,20 @@ body {
 
 .stat-item {
     text-align: center;
+    color: var(--secondary-color);
 }
 
 .stat-number {
     font-size: 2rem;
     font-weight: 700;
     display: block;
+    color: var(--secondary-color);
 }
 
 .stat-label {
     font-size: 0.9rem;
     opacity: 0.8;
+    color: var(--secondary-color);
 }
 
 .hero-shape {
