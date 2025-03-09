@@ -1,11 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialize AOS library for scroll animations
-  AOS.init({
-    duration: 600,
-    once: true
-  });
+  // Inisialisasi AOS
+  AOS.init({ duration: 800, once: true });
 
-  // Mobile menu toggle
+  // Toggle menu mobile
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.querySelector('.nav-links');
   navToggle.addEventListener('click', () => {
@@ -13,9 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.classList.toggle('active');
   });
 
-  // Change navbar style on scroll for a sleek effect
-  const navbar = document.querySelector('.navbar');
+  // Navbar scroll effect
   window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
       navbar.classList.add('scrolled');
     } else {
@@ -23,19 +20,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Optional: Typewriter effect for the hero heading
+  // Smooth scrolling untuk navigasi
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // Typewriter effect untuk hero
   const heroHeading = document.querySelector('.hero h1');
   if (heroHeading) {
-    const fullText = heroHeading.textContent;
+    const text = heroHeading.textContent;
     heroHeading.textContent = '';
     let index = 0;
-    function typeWriter() {
-      if (index < fullText.length) {
-        heroHeading.textContent += fullText.charAt(index);
+    function type() {
+      if (index < text.length) {
+        heroHeading.textContent += text.charAt(index);
         index++;
-        setTimeout(typeWriter, 40);
+        setTimeout(type, 50);
       }
     }
-    typeWriter();
+    type();
   }
 });
